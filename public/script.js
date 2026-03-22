@@ -72,8 +72,8 @@ const statementText = {
 const countryAliases = {
   "United States": ["United States", "USA", "U.S.A.", "America", "ایالات متحده", "الولايات المتحدة", "Estados Unidos", "Vereinigte Staaten", "États-Unis"],
   "United Kingdom": ["United Kingdom", "UK", "Britain", "بریتانیا", "المملكة المتحدة"],
-  "Iraq": ["Iraq", "العراق", "عراق"],
-  "Iran": ["Iran", "ایران", "إيران"],
+  "Iraq": ["Iraq", "العراق", "عراق", "country-iraq", "country iraq"],
+  "Iran": ["Iran", "ایران", "إيران", "country-iran", "country iran"],
   "Germany": ["Germany", "Deutschland", "آلمان", "ألمانيا"],
   "France": ["France", "فرانسه", "فرنسا"],
   "Spain": ["Spain", "España", "اسپانیا", "إسبانيا"],
@@ -236,13 +236,27 @@ function countToColor(count, max) {
   return '#305eb6';
 }
 
+function getMapCountryKey(path) {
+  const raw =
+    path.getAttribute('title') ||
+    path.getAttribute('name') ||
+    path.dataset.name ||
+    path.id ||
+    '';
+
+  return normalizeName(
+    String(raw)
+      .replace(/^country[-_\s]*/i, '')
+      .replace(/-/g, ' ')
+  );
+}
+
 function updateMapColors() {
   const svg = $('worldMapContainer').querySelector('svg');
   if (!svg) return;
   const maxCount = Math.max(1, ...[...countryAmountMap.values()].map(v => v.count));
   qs('path', svg).forEach(path => {
-    const raw = path.getAttribute('title') || path.getAttribute('name') || path.id || path.dataset.name || '';
-    const info = countryAmountMap.get(normalizeName(raw));
+    const info = countryAmountMap.get(getMapCountryKey(path));
     path.style.transition = 'fill 0.25s ease, opacity 0.25s ease';
     path.style.fill = countToColor(info?.count || 0, maxCount);
     path.style.opacity = activeCountry && info?.country !== activeCountry ? '0.3' : '1';
@@ -254,8 +268,7 @@ function bindMapEvents() {
   const svg = $('worldMapContainer').querySelector('svg');
   if (!svg) return;
   qs('path', svg).forEach(path => {
-    const raw = path.getAttribute('title') || path.getAttribute('name') || path.id || path.dataset.name || '';
-    const info = countryAmountMap.get(normalizeName(raw));
+    const info = countryAmountMap.get(getMapCountryKey(path));
     if (!info) return;
     path.addEventListener('click', () => {
       activeCountry = info.country;

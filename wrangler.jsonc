@@ -1,0 +1,16 @@
+{
+  "name": "statement-signature-platform",
+  "main": "public/worker.js",
+  "compatibility_date": "2026-03-22",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "statement-signature-db",
+      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+    }
+  ]
+}

@@ -237,8 +237,20 @@ function buildCountryAmountMap(rows) {
   countryAmountMap = new Map();
   rows.forEach(row => {
     const canonical = canonicalCountryName(row.country);
-    const aliases = [...new Set([canonical, row.country, ...(countryAliases[canonical] || [])])];
-    aliases.forEach(a => countryAmountMap.set(normalizeName(a), { country: row.country, count: Number(row.count || 0) }));
+    const info = {
+      country: row.country,
+      canonical,
+      count: Number(row.count || 0)
+    };
+    const aliases = [...new Set([
+      canonical,
+      row.country,
+      ...(countryAliases[canonical] || [])
+    ])];
+    aliases.forEach(a => {
+      const key = normalizeName(a);
+      if (key) countryAmountMap.set(key, info);
+    });
   });
 }
 
@@ -259,11 +271,12 @@ function getMapCountryKey(path) {
     path.id ||
     '';
 
-  return normalizeName(
-    String(raw)
-      .replace(/^country[-_\s]*/i, '')
-      .replace(/-/g, ' ')
-  );
+  const cleaned = String(raw)
+    .replace(/^country[-_\s]*/i, '')
+    .replace(/[-_]+/g, ' ')
+    .trim();
+
+  return canonicalCountryName(cleaned);
 }
 
 function updateMapColors() {
@@ -271,19 +284,20 @@ function updateMapColors() {
   if (!svg) return;
   const maxCount = Math.max(1, ...[...countryAmountMap.values()].map(v => v.count));
   qs('path', svg).forEach(path => {
-    const info = countryAmountMap.get(getMapCountryKey(path));
+    const info = countryAmountMap.get(normalizeName(getMapCountryKey(path)));
     path.style.transition = 'fill 0.25s ease, opacity 0.25s ease';
     path.style.fill = countToColor(info?.count || 0, maxCount);
-    path.style.opacity = activeCountry && info?.country !== activeCountry ? '0.3' : '1';
+    path.style.opacity = activeCountry && canonicalCountryName(info?.country || '') !== canonicalCountryName(activeCountry) ? '0.3' : '1';
     path.style.cursor = info ? 'pointer' : 'default';
   });
 }
 
 function bindMapEvents() {
   const svg = $('worldMapContainer').querySelector('svg');
-  if (!svg) return;
+  if (!svg || svg.dataset.bound === '1') return;
+  svg.dataset.bound = '1';
   qs('path', svg).forEach(path => {
-    const info = countryAmountMap.get(getMapCountryKey(path));
+    const info = countryAmountMap.get(normalizeName(getMapCountryKey(path)));
     if (!info) return;
     path.addEventListener('click', () => {
       activeCountry = info.country;

@@ -313,3 +313,39 @@ textarea:focus { border-color: rgba(38,84,182,.55); box-shadow: 0 0 0 4px rgba(4
 
 .map-fallback{min-height:240px;display:flex;align-items:center;justify-content:center;color:#4a5d7a;font-weight:700;background:rgba(221,228,242,.55);border-radius:18px}
 .statement-body p{margin:0 0 14px;line-height:2;font-size:1.03rem}
+
+
+/* final alignment fixes */
+label.agree-box {
+  display: grid !important;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  justify-items: start;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  text-align: right;
+}
+label.agree-box span {
+  width: 100%;
+  display: block;
+  text-align: right !important;
+  justify-self: stretch;
+}
+label.agree-box input {
+  margin: 4px 0 0 0;
+}
+html[dir="rtl"] label.agree-box {
+  grid-template-columns: auto 1fr;
+  direction: rtl;
+  text-align: right;
+}
+html[dir="ltr"] label.agree-box {
+  grid-template-columns: auto 1fr;
+  direction: ltr;
+  text-align: left;
+}
+html[dir="ltr"] label.agree-box span {
+  text-align: left !important;
+}

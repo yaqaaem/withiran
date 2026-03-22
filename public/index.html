@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>سامانه چندزبانه مطالعه و امضای بیانیه</title>
+  <meta name="build-version" content="2026.03.22-kh-sign-v1">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+  <div class="page-noise"></div>
+  <div class="bg-gold"></div>
+  <div class="bg-navy"></div>
+
+  <main class="shell petition-shell">
+    <header class="topbar">
+      <div class="institution-bar glass premium-border reveal-up">
+        <div class="institution-mark">✦</div>
+        <div class="institution-copy">
+          <div class="institution-kicker" id="institutionKicker">بستر رسمی و چندزبانه</div>
+          <strong class="institution-title" id="institutionTitle">سامانه جهانی مطالعه و امضای بیانیه</strong>
+          <small class="institution-subtitle" id="institutionSubtitle">نمایش زنده شمار امضاها، تفکیک کشوری و پیام‌های کوتاه کاربران در یک قالب رسمی و چندزبانه</small>
+        </div>
+        <div class="institution-side">
+          <span class="institution-chip" id="institutionChipLanguages">8 زبان فعال</span>
+          <span class="institution-chip institution-chip-gold" id="institutionChipSignatures">امضای زنده و عمومی</span>
+        </div>
+      </div>
+
+      <div class="lang-switcher-wrap reveal-up reveal-delay-1">
+        <div class="lang-switcher" dir="ltr">
+          <button class="lang-btn active" data-lang="fa">🇮🇷 فارسی</button>
+          <button class="lang-btn" data-lang="ar">🇮🇶 العربية</button>
+          <button class="lang-btn" data-lang="en">🇺🇸 English</button>
+          <button class="lang-btn" data-lang="ur">🇵🇰 اردو</button>
+          <button class="lang-btn" data-lang="fr">🇫🇷 Français</button>
+          <button class="lang-btn" data-lang="de">🇩🇪 Deutsch</button>
+          <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
+          <button class="lang-btn" data-lang="tr">🇹🇷 Türkçe</button>
+        </div>
+      </div>
+
+      <section class="hero premium-border reveal-up reveal-delay-2 petition-hero">
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+          <div class="hero-badge" id="heroBadge">پویش جهانی امضای بیانیه</div>
+          <h1 id="title">بیانیه را بخوانید و امضای خود را ثبت کنید</h1>
+          <p id="subtitle">هر بازدیدکننده می‌تواند نام یا نام مستعار خود را همراه با یک پیام کوتاه ثبت کند. شمار کل امضاها، تازه‌ترین امضاها و پراکندگی کشوری به‌صورت زنده نمایش داده می‌شود.</p>
+
+          <div class="hero-actions">
+            <button class="primary-btn" id="heroReadBtn">مطالعه بیانیه</button>
+            <button class="secondary-btn" id="heroSignBtn">ثبت امضا</button>
+          </div>
+
+          <div class="hero-features">
+            <article class="feature-card">
+              <div class="feature-icon">📜</div>
+              <div><strong id="feature1Title">متن واحد و چندزبانه</strong><small id="feature1Text">نمایش یک بیانیه در ۸ زبان با تغییر فوری رابط</small></div>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">✍️</div>
+              <div><strong id="feature2Title">امضای ساده و سریع</strong><small id="feature2Text">نام، کشور و پیام کوتاه برای ثبت پشتیبانی</small></div>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">🌍</div>
+              <div><strong id="feature3Title">گزارش جهانی زنده</strong><small id="feature3Text">نقشه کشورها، شمار امضاها و آخرین ثبت‌ها</small></div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-side premium-border">
+          <div class="hero-side-kicker" id="heroSideKicker">درباره این بستر</div>
+          <h3 id="heroSideTitle">امضای شما در آمار جهانی دیده می‌شود</h3>
+          <p id="heroSideText">پس از ثبت، امضای شما در شمار کلی، جدول کشورها و فهرست آخرین امضاها منعکس می‌شود. می‌توانید از نام واقعی یا نام مستعار استفاده کنید.</p>
+          <div class="micro-highlight">
+            <span class="micro-pill" id="microPill">ساده، سریع، چندزبانه</span>
+            <strong id="microExample">نام یا مستعار + کشور + پیام کوتاه</strong>
+            <small id="microExampleNote">برای حفظ کیفیت داده‌ها، پیام‌ها کوتاه نگه داشته می‌شوند و ثبت‌های تکراریِ بسیار سریع محدود می‌گردند.</small>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat"><span id="heroStat1">زبان‌های فعال</span><strong>8</strong></div>
+            <div class="hero-stat"><span id="heroStat2">کشورهای ثبت‌شده</span><strong id="heroCountriesCount">0</strong></div>
+            <div class="hero-stat"><span id="heroStat3">کل امضاها</span><strong id="heroSignaturesCount">0</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="trust-strip premium-border reveal-up reveal-delay-3">
+        <article class="trust-item"><span>◆</span><div><strong id="trust1Title">رابط رسمی و شفاف</strong><small id="trust1Text">ساخته‌شده برای نمایش عمومی، خوانایی بالا و اعتماد بصری</small></div></article>
+        <article class="trust-item"><span>◆</span><div><strong id="trust2Title">ثبت امضا با نام یا مستعار</strong><small id="trust2Text">کاربر می‌تواند هویت نمایشی خود را آزادانه انتخاب کند</small></div></article>
+        <article class="trust-item"><span>◆</span><div><strong id="trust3Title">آمار زنده و نقشه جهانی</strong><small id="trust3Text">جدول کشورها، آخرین امضاها و رنگ‌آمیزی تعاملی نقشه</small></div></article>
+      </section>
+    </header>
+
+    <section class="panel premium-border reveal-up" id="statementSection">
+      <div class="panel-head">
+        <div>
+          <h2 id="statementTitle">متن بیانیه</h2>
+          <p class="muted" id="statementSubtitle">کاربر پیش از امضا، متن را در زبان انتخابی خود مطالعه می‌کند.</p>
+        </div>
+        <div class="panel-icon">📘</div>
+      </div>
+      <div class="statement-card premium-border">
+        <div class="statement-badge" id="statementBadge">متن قابل امضا</div>
+        <div class="statement-body" id="statementBody"></div>
+      </div>
+    </section>
+
+    <section class="panel premium-border reveal-up" id="signSection">
+      <div class="panel-head">
+        <div>
+          <h2 id="formTitle">ثبت امضا</h2>
+          <p class="muted" id="formSubtitle">برای امضا، اطلاعات زیر را تکمیل کنید.</p>
+        </div>
+        <div class="panel-icon">🖋️</div>
+      </div>
+
+      <form id="signatureForm" class="report-form petition-form">
+        <input id="pageLoadedAt" type="hidden" value="0"/>
+        <input id="website" name="website" type="text" autocomplete="off" tabindex="-1" class="honeypot"/>
+        <div class="field-grid two-col">
+          <div class="field">
+            <label id="displayNameLabel" for="displayName">نام یا نام مستعار</label>
+            <input id="displayName" maxlength="80" placeholder="مثلاً: یک دوست"/>
+          </div>
+          <div class="field">
+            <label id="countryLabel" for="country">کشور</label>
+            <input id="country" maxlength="80" list="countrySuggestions" placeholder="مثلاً: عراق"/>
+            <datalist id="countrySuggestions"></datalist>
+          </div>
+        </div>
+
+        <div class="field">
+          <label id="messageLabel" for="message">پیام کوتاه</label>
+          <textarea id="message" maxlength="280" rows="4" placeholder="پیام کوتاه خود را بنویسید"></textarea>
+          <small class="muted" id="messageHint">حداکثر ۲۸۰ کاراکتر</small>
+        </div>
+
+        <label class="agree-box premium-border">
+          <input id="acceptStatement" type="checkbox"/>
+          <span id="acceptLabel">متن بیانیه را مطالعه کرده‌ام و امضای خود را ثبت می‌کنم.</span>
+        </label>
+
+        <div class="action-row">
+          <button class="primary-btn" type="submit" id="submitBtn">ثبت امضا</button>
+          <button class="secondary-btn" type="button" id="resetBtn">پاک‌کردن فرم</button>
+        </div>
+        <div class="notice" id="formNotice"><span>ℹ️</span><p id="formNoticeText">پس از ثبت موفق، آمار و فهرست امضاها به‌روزرسانی می‌شود.</p></div>
+      </form>
+    </section>
+
+    <section class="stats-grid reveal-up">
+      <article class="stat-card premium-border"><span id="stat1Label">کل امضاها</span><strong id="statSignatures">0</strong></article>
+      <article class="stat-card premium-border"><span id="stat2Label">کشورهای فعال</span><strong id="statCountries">0</strong></article>
+      <article class="stat-card premium-border"><span id="stat3Label">آخرین به‌روزرسانی</span><strong id="statUpdated">—</strong></article>
+    </section>
+
+    <section class="dual-grid">
+      <div class="panel premium-border map-panel">
+        <div class="panel-head compact-head">
+          <div>
+            <h2 id="mapTitle">نقشه جهانی امضاها</h2>
+            <p class="muted" id="mapSubtitle">رنگ هر کشور متناسب با تعداد امضاهاست.</p>
+          </div>
+          <div class="panel-icon">🗺️</div>
+        </div>
+        <div class="map-toolbar premium-border">
+          <span id="activeCountryText">کشور فعال:</span>
+          <strong id="activeCountryLabel">همه کشورها</strong>
+          <button class="mini-btn" id="clearCountryFilter">نمایش همه</button>
+        </div>
+        <div id="worldMapContainer" class="world-map-box premium-border"></div>
+      </div>
+
+      <div class="panel premium-border">
+        <div class="panel-head compact-head">
+          <div>
+            <h2 id="countryTableTitle">جدول کشورها</h2>
+            <p class="muted" id="countryTableSubtitle">مرتب‌شده بر اساس تعداد امضاها</p>
+          </div>
+          <div class="panel-icon">📋</div>
+        </div>
+        <div class="table-wrap premium-border">
+          <table>
+            <thead>
+              <tr>
+                <th id="thCountry">کشور</th>
+                <th id="thCount">تعداد</th>
+              </tr>
+            </thead>
+            <tbody id="countryTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel premium-border reveal-up" id="recentSection">
+      <div class="panel-head compact-head">
+        <div>
+          <h2 id="recentTitle">آخرین امضاها</h2>
+          <p class="muted" id="recentSubtitle">فهرست تازه‌ترین ثبت‌ها با پیام کوتاه</p>
+        </div>
+        <div class="panel-icon">🕘</div>
+      </div>
+      <div class="recent-list" id="recentList"></div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

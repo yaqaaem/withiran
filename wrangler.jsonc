@@ -9,7 +9,7 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "statement-signature-db",
+      "database_name": "withiran-db",
       "database_id": "81290ca1-378e-4490-b55c-327396f4d0a4"
     }
   ]

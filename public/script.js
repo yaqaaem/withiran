@@ -219,10 +219,25 @@ function renderRecent(rows) {
   });
 }
 
+const countryAliasLookup = (() => {
+  const map = new Map();
+  Object.entries(countryAliases).forEach(([canonical, aliases]) => {
+    [canonical, ...(aliases || [])].forEach(name => {
+      map.set(normalizeName(name), canonical);
+    });
+  });
+  return map;
+})();
+
+function canonicalCountryName(name = "") {
+  return countryAliasLookup.get(normalizeName(name)) || String(name || '').trim();
+}
+
 function buildCountryAmountMap(rows) {
   countryAmountMap = new Map();
   rows.forEach(row => {
-    const aliases = countryAliases[row.country] || [row.country];
+    const canonical = canonicalCountryName(row.country);
+    const aliases = [...new Set([canonical, row.country, ...(countryAliases[canonical] || [])])];
     aliases.forEach(a => countryAmountMap.set(normalizeName(a), { country: row.country, count: Number(row.count || 0) }));
   });
 }

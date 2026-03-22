@@ -254,12 +254,30 @@ html{scroll-behavior:smooth}
 .agree-box {
   display: flex;
   gap: 12px;
-  align-items: start;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
   padding: 16px 18px;
   background: rgba(255,255,255,.78);
   border-radius: 20px;
+  text-align: start;
 }
-.agree-box input { margin-top: 4px; transform: scale(1.1); }
+.agree-box span {
+  flex: 1;
+  text-align: start;
+  line-height: 1.9;
+}
+.agree-box input {
+  margin-top: 4px;
+  transform: scale(1.1);
+  flex: 0 0 auto;
+}
+html[dir="rtl"] .agree-box {
+  direction: rtl;
+}
+html[dir="ltr"] .agree-box {
+  direction: ltr;
+}
 .world-map-box { min-height: 420px; background: rgba(255,255,255,.95); padding: 18px; }
 .world-map-box svg { width: 100%; height: auto; display: block; }
 .map-toolbar {

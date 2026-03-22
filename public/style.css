@@ -292,3 +292,6 @@ textarea:focus { border-color: rgba(38,84,182,.55); box-shadow: 0 0 0 4px rgba(4
   .two-col { grid-template-columns: 1fr; }
   .world-map-box { min-height: 280px; }
 }
+
+.map-fallback{min-height:240px;display:flex;align-items:center;justify-content:center;color:#4a5d7a;font-weight:700;background:rgba(221,228,242,.55);border-radius:18px}
+.statement-body p{margin:0 0 14px;line-height:2;font-size:1.03rem}

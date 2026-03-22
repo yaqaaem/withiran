@@ -10,44 +10,60 @@ let mapLoaded = false;
 
 const statementText = {
   fa: [
-    "من متن این بیانیه را خوانده‌ام و امضای خود را به‌عنوان نشانه‌ای از همراهی، همدلی و حضور آگاهانه ثبت می‌کنم.",
-    "هدف این سامانه، فراهم‌کردن بستری چندزبانه برای مطالعه متن، ثبت نام یا نام مستعار، و نمایش عمومی شمار امضاها و پراکندگی جهانی کاربران است.",
-    "با ثبت این امضا، من مسئولیت صحت اطلاعات نمایشی خود را می‌پذیرم و می‌دانم که پیام کوتاه من در چارچوب ضوابط فنی سایت نمایش داده خواهد شد."
+    "۱) بند نخست پویش: متن نهایی این بخش را خودتان جایگزین کنید.",
+    "۲) بند دوم پویش: این ساختار برای نمایش متن شماره‌گذاری‌شده آماده شده است.",
+    "۳) بند سوم پویش: هر بند در رابط کاربری به‌صورت مجزا و خوانا نمایش داده می‌شود.",
+    "۴) بند چهارم پویش: پس از نهایی‌شدن متن، ترجمه‌های هشت‌زبانه را می‌توان در همین بخش قرار داد.",
+    "۵) بند پنجم پویش: امضاکننده پس از مطالعه متن، فرم را تکمیل و ثبت می‌کند."
   ],
   ar: [
-    "لقد قرأت نص هذا البيان، وأثبت توقيعي بوصفه علامة على الحضور الواعي والتضامن والمشاركة الرمزية.",
-    "تهدف هذه المنصة إلى توفير مساحة متعددة اللغات لقراءة النص، وتسجيل الاسم أو الاسم المستعار، وإظهار العدد الكلي للتوقيعات وتوزعها العالمي.",
-    "وبتسجيل هذا التوقيع، أتحمل مسؤولية صحة المعلومات الظاهرة باسمي، وأعلم أن رسالتي القصيرة قد تُعرض ضمن الضوابط الفنية للموقع."
+    "1) البند الأول: استبدل هذا الموضع بالنص النهائي للحملة.",
+    "2) البند الثاني: هذا الهيكل جاهز لعرض نص مرقّم وواضح.",
+    "3) البند الثالث: كل بند يُعرض بشكل مستقل وسهل القراءة داخل الواجهة.",
+    "4) البند الرابع: بعد اعتماد النص النهائي يمكن وضع الترجمات الثمانية هنا.",
+    "5) البند الخامس: بعد قراءة النص يملأ المستخدم النموذج ثم يرسله."
   ],
   en: [
-    "I have read this statement and I record my signature as a sign of conscious presence, solidarity, and symbolic participation.",
-    "This platform provides a multilingual space to read the text, submit a real name or pseudonym, and display the total number of signatures together with their global distribution.",
-    "By submitting this signature, I accept responsibility for the accuracy of my public display information and understand that my short message may be shown under the website's technical rules."
+    "1) First section: replace this placeholder with the final campaign text.",
+    "2) Second section: this layout is ready for numbered statement paragraphs.",
+    "3) Third section: each paragraph is shown separately for better readability.",
+    "4) Fourth section: once approved, all eight language translations can be inserted here.",
+    "5) Fifth section: after reading the text, the signer completes and submits the form."
   ],
   ur: [
-    "میں نے اس بیان کا متن پڑھ لیا ہے اور میں اپنی دستخط بطور آگاہ شرکت، یکجہتی اور علامتی حمایت کے طور پر درج کر رہا ہوں۔",
-    "اس پلیٹ فارم کا مقصد ایک کثیر لسانی جگہ فراہم کرنا ہے جہاں متن پڑھا جا سکے، اصل نام یا فرضی نام درج کیا جا سکے، اور دستخطوں کی مجموعی تعداد اور عالمی تقسیم دکھائی جا سکے۔",
-    "اس دستخط کے اندراج کے ساتھ میں اپنی ظاہری معلومات کی صحت کی ذمہ داری قبول کرتا ہوں اور جانتا ہوں کہ میرا مختصر پیغام ویب سائٹ کے فنی ضوابط کے تحت دکھایا جا سکتا ہے۔"
+    "1) پہلی شق: یہاں حتمی مہم کا متن درج کریں۔",
+    "2) دوسری شق: یہ ڈھانچہ نمبر وار متن دکھانے کے لیے تیار ہے۔",
+    "3) تیسری شق: ہر شق الگ اور واضح انداز میں دکھائی جاتی ہے۔",
+    "4) چوتھی شق: حتمی متن منظور ہونے کے بعد آٹھ زبانوں کے تراجم یہی شامل کیے جا سکتے ہیں۔",
+    "5) پانچویں شق: متن پڑھنے کے بعد دستخط کرنے والا فارم مکمل کر کے جمع کرتا ہے۔"
   ],
   fr: [
-    "J’ai lu ce texte et j’enregistre ma signature comme marque de présence consciente, de solidarité et de participation symbolique.",
-    "Cette plateforme offre un espace multilingue pour lire la déclaration, enregistrer un nom réel ou un pseudonyme, et afficher le nombre total de signatures ainsi que leur répartition mondiale.",
-    "En soumettant cette signature, j’assume la responsabilité de l’exactitude des informations affichées publiquement et je comprends que mon court message peut être publié selon les règles techniques du site."
+    "1) Première section : remplacez cet espace par le texte final de la campagne.",
+    "2) Deuxième section : cette structure est prête pour un texte numéroté.",
+    "3) Troisième section : chaque paragraphe apparaît séparément pour une meilleure lisibilité.",
+    "4) Quatrième section : après validation, les huit traductions peuvent être ajoutées ici.",
+    "5) Cinquième section : après lecture, le signataire remplit puis envoie le formulaire."
   ],
   de: [
-    "Ich habe diesen Erklärungstext gelesen und registriere meine Unterschrift als Zeichen bewusster Präsenz, Solidarität und symbolischer Beteiligung.",
-    "Diese Plattform bietet einen mehrsprachigen Raum, um den Text zu lesen, einen echten Namen oder ein Pseudonym einzutragen und die Gesamtzahl der Unterschriften sowie ihre weltweite Verteilung anzuzeigen.",
-    "Mit dem Absenden dieser Unterschrift übernehme ich die Verantwortung für die Richtigkeit meiner öffentlichen Angaben und weiß, dass meine kurze Nachricht nach den technischen Regeln der Website angezeigt werden kann."
+    "1) Erster Abschnitt: Ersetzen Sie diesen Platzhalter durch den endgültigen Kampagnentext.",
+    "2) Zweiter Abschnitt: Dieses Layout ist für nummerierte Absätze vorbereitet.",
+    "3) Dritter Abschnitt: Jeder Abschnitt wird separat und gut lesbar angezeigt.",
+    "4) Vierter Abschnitt: Nach Freigabe können hier alle acht Übersetzungen eingefügt werden.",
+    "5) Fünfter Abschnitt: Nach dem Lesen füllt die unterzeichnende Person das Formular aus und sendet es ab."
   ],
   es: [
-    "He leído este texto y registro mi firma como señal de presencia consciente, solidaridad y participación simbólica.",
-    "Esta plataforma ofrece un espacio multilingüe para leer la declaración, registrar un nombre real o seudónimo y mostrar el número total de firmas junto con su distribución global.",
-    "Al enviar esta firma, asumo la responsabilidad por la exactitud de la información mostrada públicamente y entiendo que mi mensaje breve puede publicarse conforme a las reglas técnicas del sitio."
+    "1) Primera sección: sustituya este marcador por el texto final de la campaña.",
+    "2) Segunda sección: esta estructura ya está lista para mostrar párrafos numerados.",
+    "3) Tercera sección: cada párrafo se presenta por separado para facilitar la lectura.",
+    "4) Cuarta sección: una vez aprobado, aquí pueden colocarse las traducciones en ocho idiomas.",
+    "5) Quinta sección: tras leer el texto, la persona firmante completa y envía el formulario."
   ],
   tr: [
-    "Bu bildiriyi okudum ve imzamı bilinçli katılımın, dayanışmanın ve sembolik desteğin bir işareti olarak kaydediyorum.",
-    "Bu platform, metni okumak, gerçek ad ya da takma ad girmek ve toplam imza sayısıyla küresel dağılımı göstermek için çok dilli bir alan sunar.",
-    "Bu imzayı göndererek, kamuya açık görünen bilgilerimin doğruluğundan sorumlu olduğumu kabul eder ve kısa mesajımın sitenin teknik kuralları çerçevesinde gösterilebileceğini bilirim."
+    "1) Birinci bölüm: bu alanı nihai kampanya metniyle değiştirin.",
+    "2) İkinci bölüm: bu düzen numaralı metinler için hazırdır.",
+    "3) Üçüncü bölüm: her paragraf daha iyi okunabilirlik için ayrı gösterilir.",
+    "4) Dördüncü bölüm: nihai metin onaylandıktan sonra sekiz dil çevirisi buraya eklenebilir.",
+    "5) Beşinci bölüm: metni okuduktan sonra imzacı formu doldurup gönderir."
   ]
 };
 
@@ -236,9 +252,21 @@ function bindMapEvents() {
 
 async function initWorldMap() {
   if (mapLoaded) return;
-  const res = await fetch('./world-map.svg');
-  $('worldMapContainer').innerHTML = await res.text();
-  mapLoaded = true;
+  const container = $('worldMapContainer');
+  if (!container) return;
+  const existingSvg = container.querySelector('svg');
+  if (existingSvg) {
+    mapLoaded = true;
+    return;
+  }
+  try {
+    const res = await fetch('/world-map.svg', { cache: 'no-store' });
+    if (!res.ok) throw new Error(`Map fetch failed: ${res.status}`);
+    container.innerHTML = await res.text();
+  } catch (err) {
+    container.innerHTML = '<div class="map-fallback">بارگذاری نقشه انجام نشد.</div>';
+  }
+  mapLoaded = !!container.querySelector('svg');
 }
 
 async function refreshData() {
@@ -258,6 +286,7 @@ async function refreshData() {
   renderCountriesTable(countries || []);
   renderRecent(signatures || []);
   if (!mapLoaded) await initWorldMap();
+  bindMapEvents();
   bindMapEvents();
   updateMapColors();
 }

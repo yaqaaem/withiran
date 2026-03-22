@@ -349,3 +349,31 @@ html[dir="ltr"] label.agree-box {
 html[dir="ltr"] label.agree-box span {
   text-align: left !important;
 }
+.site-footer {
+  margin-top: 60px;
+  padding: 20px 10px;
+  background: #0f172a;
+  color: #cbd5e1;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-text {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.footer-text a {
+  color: #38bdf8;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}

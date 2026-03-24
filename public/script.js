@@ -141,7 +141,7 @@ const i18n = {
 function setText(id, key) { const el = $(id); if (el) el.textContent = i18n[currentLang][key]; }
 function escapeHtml(str = "") { return String(str).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c])); }
 function normalizeName(name = "") { return String(name).trim().toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim(); }
-function formatDate(iso) { try { return new Date(iso).toLocaleString(currentLang === 'fa' ? 'fa-IR' : undefined); } catch { return iso || '—'; } }
+function formatDate(iso) { try { const locale = currentLang === 'fa' ? 'fa-IR' : currentLang === 'pt' ? 'pt-BR' : undefined; return new Date(iso).toLocaleString(locale); } catch { return iso || '—'; } }
 
 function applyLanguage(lang) {
   currentLang = i18n[lang] ? lang : DEFAULT_LANG;
@@ -159,9 +159,9 @@ function applyLanguage(lang) {
   ].forEach(id => setText(id, id));
   $('activeCountryLabel').textContent = activeCountry || i18n[currentLang].allCountries;
   $('clearCountryFilter').textContent = i18n[currentLang].clearCountryFilter;
-  $('displayName').placeholder = currentLang === 'fa' ? 'مثلاً: یک دوست' : currentLang === 'ar' ? 'مثلاً: صديق' : 'e.g. A friend';
-  $('country').placeholder = currentLang === 'fa' ? 'مثلاً: عراق' : currentLang === 'ar' ? 'مثلاً: العراق' : 'e.g. Iraq';
-  $('message').placeholder = currentLang === 'fa' ? 'پیام کوتاه خود را بنویسید' : currentLang === 'ar' ? 'اكتب رسالتك القصيرة' : 'Write your short message';
+  $('displayName').placeholder = currentLang === 'fa' ? 'مثلاً: یک دوست' : currentLang === 'ar' ? 'مثلاً: صديق' : currentLang === 'pt' ? 'Ex.: Um apoiador' : 'e.g. A friend';
+  $('country').placeholder = currentLang === 'fa' ? 'مثلاً: عراق' : currentLang === 'ar' ? 'مثلاً: العراق' : currentLang === 'pt' ? 'Ex.: Brasil' : 'e.g. Iraq';
+  $('message').placeholder = currentLang === 'fa' ? 'پیام کوتاه خود را بنویسید' : currentLang === 'ar' ? 'اكتب رسالتك القصيرة' : currentLang === 'pt' ? 'Escreva sua mensagem curta' : 'Write your short message';
 
   $('statementBody').innerHTML = statementText[currentLang].map(p => `<p>${escapeHtml(p)}</p>`).join('');
   renderCountriesTable(window.countryRows || []);

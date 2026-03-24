@@ -62,9 +62,9 @@ a{color:inherit}
 .institution-chip{padding:10px 12px;border-radius:999px;background:#f3f6fb;border:1px solid var(--line);font-size:13px;font-weight:700}
 .institution-chip-gold{background:linear-gradient(135deg,#f9f0d8,#fff8eb);color:#8a6221;border-color:rgba(200,164,93,.35)}
 .lang-switcher-wrap{display:flex;justify-content:center}
-.lang-switcher{display:flex;gap:10px;flex-wrap:wrap;background:rgba(255,255,255,.92);padding:10px;border-radius:999px;box-shadow:var(--shadow-soft);border:1px solid var(--line)}
+.lang-switcher{display:flex;gap:8px;flex-wrap:wrap;background:rgba(255,255,255,.92);padding:8px 10px;border-radius:999px;box-shadow:var(--shadow-soft);border:1px solid var(--line);max-width:100%;justify-content:center}
 .lang-btn,.currency-btn,.amount-btn,.agent-card,.primary-btn,.secondary-btn,.mini-btn{font:inherit;border:none;cursor:pointer;transition:.22s ease}
-.lang-btn{padding:11px 14px;border-radius:999px;background:transparent;color:var(--muted);font-weight:700}
+.lang-btn{padding:10px 12px;border-radius:999px;background:transparent;color:var(--muted);font-weight:700}
 .lang-btn:hover,.lang-btn.active{background:var(--navy);color:#fff}
 .hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(320px,.9fr);gap:20px;padding:26px;position:relative;overflow:hidden}
 .hero-grid{position:absolute;inset:0;background:
@@ -462,3 +462,19 @@ html.tg-webview .primary-btn,
 html.tg-webview .secondary-btn,
 html.tg-webview .mini-btn,
 html.tg-webview .lang-btn{animation:none!important;transition:none!important;transform:none!important;will-change:auto!important}
+
+
+/* desktop readability tightening */
+.petition-shell{max-width:920px !important;padding-left:20px;padding-right:20px}
+.petition-shell > section,
+.petition-shell > header{max-width:100%}
+.statement-card,.panel,.hero,.trust-strip,.stats-grid,.dual-grid{max-width:100%}
+.statement-card{max-width:860px;margin-inline:auto}
+.statement-body{max-width:760px;margin-inline:auto}
+.report-form{max-width:760px;margin-inline:auto}
+.map-panel,.recent-panel{min-width:0}
+@media (min-width: 1200px){
+  .petition-shell{max-width:880px !important}
+  .hero{grid-template-columns:minmax(0,1.18fr) minmax(280px,.82fr)}
+  .panel,.hero,.trust-strip{padding-left:22px;padding-right:22px}
+}

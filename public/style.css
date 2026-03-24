@@ -1,4 +1,9 @@
 
+
+html,body{width:100%;max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+img,svg,canvas,video{max-width:100%;height:auto}
+main,section,article,div,aside,header,footer,form{min-width:0}
+
 :root{
   --bg:#f8f7f2;
   --surface:#ffffff;
@@ -379,16 +384,28 @@ html[dir="ltr"] label.agree-box span {
 }
 
 
-/* Telegram in-app browser fallback */
+/* layout hardening for mobile/webviews */
+.shell,.topbar,.hero,.hero-content,.hero-side,.panel,.statement-card,.stats-grid,.dual-grid,.map-panel,.recent-panel,.table-wrap,.world-map-box,.lang-switcher-wrap,.lang-switcher,.hero-actions,.hero-features,.trust-strip,.petition-form,.field-grid,.action-row,.notice{min-width:0;max-width:100%}
+.dual-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:18px}
+#worldMapContainer,.world-map-box,.table-wrap{overflow:hidden}
+.world-map-box svg,#worldMapContainer svg{width:100%!important;height:auto!important;display:block!important}
+.lang-switcher{justify-content:center}
+.lang-btn{white-space:normal;word-break:break-word}
+.institution-title,.institution-subtitle,.hero h1,.hero p,.feature-card strong,.feature-card small,.trust-item strong,.trust-item small,.hero-side h3,.hero-side p,.statement-body p,.report-note,.report-meta,.report-name,.table-wrap th,.table-wrap td,.lang-btn{overflow-wrap:anywhere;word-break:break-word}
+@media (max-width: 920px){
+  .dual-grid{grid-template-columns:1fr}
+}
+
+/* Telegram in-app browser aggressive fallback */
+html.tg-webview body{background:#f8f7f2!important}
 html.tg-webview .page-noise,
 html.tg-webview .bg-gold,
 html.tg-webview .bg-navy,
+html.tg-webview .hero-grid,
 html.tg-webview .hero::after,
 html.tg-webview .hero-badge::after,
-html.tg-webview .micro-pill::after {
-  display: none !important;
-}
-
+html.tg-webview .micro-pill::after,
+html.tg-webview .premium-border::before{display:none!important}
 html.tg-webview .glass,
 html.tg-webview .panel,
 html.tg-webview .hero,
@@ -399,21 +416,38 @@ html.tg-webview .hero-side,
 html.tg-webview .map-panel,
 html.tg-webview .recent-panel,
 html.tg-webview .conversion-note,
-html.tg-webview .institution-bar,
 html.tg-webview .statement-card,
 html.tg-webview .feature-card,
 html.tg-webview .trust-item,
-html.tg-webview .country-table-wrap,
-html.tg-webview .recent-item {
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  background: #ffffff !important;
+html.tg-webview .report-item,
+html.tg-webview .stat-card,
+html.tg-webview .map-toolbar,
+html.tg-webview .agree-box{
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  filter:none!important;
+  box-shadow:none!important;
 }
-
-html.tg-webview .premium-border::before {
-  display: none !important;
-}
-
+html.tg-webview .shell{max-width:100%!important;padding:12px!important;margin:0!important}
+html.tg-webview .hero,
+html.tg-webview .trust-strip,
+html.tg-webview .hero-features,
+html.tg-webview .hero-stats,
+html.tg-webview .stats-grid,
+html.tg-webview .dual-grid,
+html.tg-webview .field-grid,
+html.tg-webview .action-row{grid-template-columns:1fr!important}
+html.tg-webview .hero{display:block!important}
+html.tg-webview .hero-side{margin-top:16px!important}
+html.tg-webview .lang-switcher-wrap{display:block!important;width:100%!important}
+html.tg-webview .lang-switcher{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;width:100%!important;border-radius:20px!important}
+html.tg-webview .lang-btn{width:100%!important;padding:10px 8px!important;font-size:13px!important}
+html.tg-webview .institution-bar{display:block!important}
+html.tg-webview .institution-side{margin-top:12px!important}
+html.tg-webview .world-map-box{min-height:auto!important;padding:10px!important}
+html.tg-webview #worldMapContainer{min-height:auto!important}
+html.tg-webview #worldMapContainer svg{display:block!important;width:100%!important;height:auto!important;max-width:100%!important}
+html.tg-webview .table-wrap{overflow:auto!important;-webkit-overflow-scrolling:touch!important}
 html.tg-webview .map-country,
 html.tg-webview .report-item,
 html.tg-webview .feature-card,
@@ -421,50 +455,4 @@ html.tg-webview .trust-item,
 html.tg-webview .primary-btn,
 html.tg-webview .secondary-btn,
 html.tg-webview .mini-btn,
-html.tg-webview .lang-btn {
-  filter: none !important;
-  animation: none !important;
-  transition: none !important;
-  transform: none !important;
-}
-
-html.tg-webview .hero,
-html.tg-webview .panel,
-html.tg-webview .map-panel,
-html.tg-webview .recent-panel,
-html.tg-webview .institution-bar,
-html.tg-webview .trust-strip,
-html.tg-webview .process-strip,
-html.tg-webview .feature-card,
-html.tg-webview .trust-item {
-  will-change: auto !important;
-}
-
-html.tg-webview .world-map-container,
-html.tg-webview .world-map-box {
-  min-height: 260px !important;
-  overflow: hidden !important;
-}
-
-html.tg-webview .world-map-box svg,
-html.tg-webview .world-map-container svg {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-  max-width: 100% !important;
-}
-
-html.tg-webview .reveal-up,
-html.tg-webview .reveal-delay-1,
-html.tg-webview .reveal-delay-2,
-html.tg-webview .reveal-delay-3 {
-  opacity: 1 !important;
-  transform: none !important;
-  animation: none !important;
-}
-
-@media (max-width: 920px) {
-  html.tg-webview .shell {
-    overflow-x: hidden !important;
-  }
-}
+html.tg-webview .lang-btn{animation:none!important;transition:none!important;transform:none!important;will-change:auto!important}

@@ -377,3 +377,94 @@ html[dir="ltr"] label.agree-box span {
 .footer-text a:hover {
   text-decoration: underline;
 }
+
+
+/* Telegram in-app browser fallback */
+html.tg-webview .page-noise,
+html.tg-webview .bg-gold,
+html.tg-webview .bg-navy,
+html.tg-webview .hero::after,
+html.tg-webview .hero-badge::after,
+html.tg-webview .micro-pill::after {
+  display: none !important;
+}
+
+html.tg-webview .glass,
+html.tg-webview .panel,
+html.tg-webview .hero,
+html.tg-webview .trust-strip,
+html.tg-webview .footer,
+html.tg-webview .process-strip,
+html.tg-webview .hero-side,
+html.tg-webview .map-panel,
+html.tg-webview .recent-panel,
+html.tg-webview .conversion-note,
+html.tg-webview .institution-bar,
+html.tg-webview .statement-card,
+html.tg-webview .feature-card,
+html.tg-webview .trust-item,
+html.tg-webview .country-table-wrap,
+html.tg-webview .recent-item {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: #ffffff !important;
+}
+
+html.tg-webview .premium-border::before {
+  display: none !important;
+}
+
+html.tg-webview .map-country,
+html.tg-webview .report-item,
+html.tg-webview .feature-card,
+html.tg-webview .trust-item,
+html.tg-webview .primary-btn,
+html.tg-webview .secondary-btn,
+html.tg-webview .mini-btn,
+html.tg-webview .lang-btn {
+  filter: none !important;
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+html.tg-webview .hero,
+html.tg-webview .panel,
+html.tg-webview .map-panel,
+html.tg-webview .recent-panel,
+html.tg-webview .institution-bar,
+html.tg-webview .trust-strip,
+html.tg-webview .process-strip,
+html.tg-webview .feature-card,
+html.tg-webview .trust-item {
+  will-change: auto !important;
+}
+
+html.tg-webview .world-map-container,
+html.tg-webview .world-map-box {
+  min-height: 260px !important;
+  overflow: hidden !important;
+}
+
+html.tg-webview .world-map-box svg,
+html.tg-webview .world-map-container svg {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+}
+
+html.tg-webview .reveal-up,
+html.tg-webview .reveal-delay-1,
+html.tg-webview .reveal-delay-2,
+html.tg-webview .reveal-delay-3 {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+@media (max-width: 920px) {
+  html.tg-webview .shell {
+    overflow-x: hidden !important;
+  }
+}

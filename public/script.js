@@ -2,6 +2,14 @@ const $ = (id) => document.getElementById(id);
 const qs = (sel, root = document) => [...root.querySelectorAll(sel)];
 
 const buildVersion = document.querySelector('meta[name="build-version"]')?.content || "dev";
+const isTelegramWebView =
+  /Telegram|TgWebView/i.test(navigator.userAgent) ||
+  !!window.Telegram?.WebApp;
+
+if (isTelegramWebView) {
+  document.documentElement.classList.add('tg-webview');
+}
+
 const DEFAULT_LANG = "fa";
 let currentLang = DEFAULT_LANG;
 let activeCountry = null;
